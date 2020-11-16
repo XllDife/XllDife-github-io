@@ -282,6 +282,22 @@
   
 
   
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://example.com/2020/11/12/Welcome/",
+  owner: 'XllDife',
+  repo: 'xlldife.github.io',
+  oauth: {
+    client_id: '3cbaceb3c095b53a7b18',
+    client_secret: '130fc2bbf07da9471bf2ce05ba558eff58132ffb',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>

@@ -1,0 +1,207 @@
+\documentclass{report}
+
+\usepackage{tabularx,makecell,multirow,titlesec,color,xcolor,amsthm,amsmath}
+
+\title
+{Reading report of 
+\emph{Principles of Mathematical Analysis}
+-Part \uppercase\expandafter{\romannumeral1}}
+
+\author{002 gxl}
+\date{\today}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{myprf}{Proof}
+\newtheorem{mytho}{Theorem}
+\newtheorem{mypro}{Propositon}
+
+
+\begin{document}
+    \maketitle
+    \chapter[Chapter]{The Real and Complex Number Systems}
+        \section{Notes}
+            The chapter 1 mainly talks about The real 
+            number system,$\mathbf{R}$. 
+            \subsection{Why we need $\mathbf{R}$}
+                The rational number system is inadequate for many purposes , 
+                both as a field (Dedekind principle) 
+                and as an ordered set (the least-upper-bound property).
+                And we can proof that 
+                $\mathbf{R}$ is perfectly matched.
+            \subsection{Basic property of $\mathbf{R}$}
+                Theorems there seems to \emph{OBVIOUS}  to proof , but 
+                some of them are interesting.
+                \begin{mypro}
+                    The following statements are true in every ordered field.\\
+                    \\
+                    (a)\quad If $x>0$ then $-x<0$,and vice versa.\\
+                    
+                \begin{flushleft}
+                    \textbf{Proof}(a)\\
+                If $x>0$ then $0=-x+x>-x+0$,so that $-x<0$.
+                If $x<0$ then $0=-x+x<-x+0$,so that $-x>0$.
+                This proves (a).
+                \end{flushleft}
+                
+                \end{mypro}
+
+                
+                \begin{mytho}
+                    If $x\in\mathbf{R},y\in\mathbf{R}$,and $x>0$,
+                    and there is a positive integer $n$ such that\\
+                    \begin{center}
+                        $nx>y$
+                    \end{center}
+                    \begin{flushleft}
+                        \textbf{Proof} (Tool:the least-upper-bound property)\\
+                        Let $A=\left\{ nx|n\in\mathbf{N}^{*} \right\}$.
+                        If Theorem were false,then $y$ would be an upper bound of $A$.
+                        Put $\alpha=sup A$ . Since $x>0$,then $\alpha-x$ is not an upper bound of $A$.
+                        Hence $\alpha-x<mx$ for some $mx\in A$.
+                        But then $\alpha<(m+1)x\in A$ , which is impossible.
+                    \end{flushleft}
+                \end{mytho}
+            \subsection{The fields that contains $\mathbf{R}$ as a subfield}
+
+
+        \section{Exercises}
+            \begin{myprf}
+                If $r+x$  were rational , $x=(r+x)-r$ is also rational,which is contradictory. 
+                The similar argument holds for $rx$ .
+            \end{myprf}   
+            \begin{myprf}
+                If there existed a rational number $x=\frac{m}{n}$ , $gcd(m,n)=1$.
+                and $x^{2}=12$.Then we can get $m^{2}=12n^{2}=3\times4n^{2}$.
+                Hence $m$ is divided by $3$,and $m^{2}$ is divided by $9$.
+                Thus $q$ is also divided by $3$,which is contradictory.
+            \end{myprf} 
+            \begin{myprf}
+                For (a) , 
+                if $x\not=0$ and $xy=xz$ , then 
+                \begin{align*}
+                    y=1 \times y&=\frac{x}{x} \times y=\frac{xy}{x}\\
+                                &=\frac{xz}{x}=\frac{x}{x} \times z=z
+                \end{align*}
+                The similar argument holds for (b)(c)(d) .
+            \end{myprf} 
+            \begin{myprf}
+                Assuming one element $x\in E$ , it follows from the definition that\\
+                \centerline{$\alpha \le x \le \beta$}
+            \end{myprf} 
+            \begin{myprf}
+                For each $x \in A$ , $supA \ge x$ , 
+                thus for each $-x \in B$ , $-supA \le x$ , which proves $-supA=infB$. 
+            \end{myprf} 
+            \begin{myprf}
+                
+                (a) Let $\beta=(b^{m})^{\frac{1}{n}}$,then
+                \begin{center}
+                    $\beta^{nq}=b^{mq}=b^{np}$\\
+                    Thus $\beta^{q}=b^{p}$ , $\beta=(b^{p})^{\frac{1}{q}}$\\
+                \end{center}
+                (b)Assuming $r=\frac{m}{n}$ and $s=\frac{p}{q}$ ,then\\
+                \centerline{$b^{r+s}=b^{\frac{mq+np}{nq}}=
+                        (b^{mq})^{\frac{1}{nq}}(b^{np})^{\frac{1}{nq}}=b^{r}b^{s}$}
+                (c)For each $x \le r$ , $b^{x} \le b^{r}$\\
+                    Hence for each $b^{x} \in B(r)$ , $b^{r} \ge b^{x}$ , which proves\\
+                    \centerline{$b^{r}=supB(r)$}
+                (d)$\forall r,s \in \mathbf{Q}$ , and $r \le x,s \le y$\\
+                \centerline{$b^{r}b^{s} =b^{r+s} \le sup\ B(x+y)=b^{x+y}$}
+                (e)
+
+            \end{myprf} 
+            \begin{myprf}
+                (a)$b^{n}-1=(b-1)\sum_{i=1}^{n}b^{i} \ge n(b-1)$.\\
+                (b)Just let $b$ in (a) become $b^{\frac{1}{n}}$.\\
+                (c)Use (b)\\
+                (e)To see this , apply part(c) with $t=\frac{b^w}{y}$.\\
+                (f)Obviously $b^x \le y$.
+                    If $b^x <y$, according to (d),$b^{x+\frac{1}{n}}<y$ for sufficiently large $n$.
+                    Then $x+\frac{1}{n} \in A$,which is contradictory.Hence $b^x=y$.\\
+                (g)Assume that $x>y$, \[b^x=b^yb^{x-y}>b^y\]. 
+            \end{myprf} 
+            \begin{myprf}
+                Assuming $\mathbf{C}$ were a ordered field,if $i>0$ ,then $i^{2}=-1>0$,which is contradictory.
+            \end{myprf}
+            \begin{myprf}
+                (i)In this definition , it is obvious that\\
+                if $x \in \mathbf{C}$ and $y \in \mathbf{C}$,then one and only one of the statements\\
+                \centerline{$x<y,\qquad x=y,\qquad y<x \qquad$}
+                is true.\\
+                (ii)If $x,y,z \in \mathbf{C}$ and assuming $x<y$ , $y<z$ ,then
+                \begin{align*}
+                    &1.Re(x) < Re(y) < Re(z) &\Rightarrow x<z\\
+                    &2.Re(x) = Re(y) < Re(z)\quad or \quad Re(x) < Re(y) = Re(z) &\Rightarrow x<z\\
+                    &3.Re(x) = Re(y) = Re(z)\quad and \quad Im(x)<Im(y)<Im(z) &\Rightarrow x<z
+                \end{align*}
+                which proves $x<z$.
+            \end{myprf}
+            \begin{myprf}
+                \begin{align*}
+                    z^{2}&=a^{2}-b^{2}+2abi\\
+                         &=u+\sqrt{|w|^{2}-u^2}i\\
+                         &=u+|v|i
+                \end{align*}
+                \begin{align*}
+                    \overline{z}^{2}&=a^{2}-b^{2}-2abi\\
+                         &=u-\sqrt{|w|^{2}-u^2}i\\
+                         &=u-|v|i
+                \end{align*}
+            \end{myprf}
+            \begin{myprf}
+                Let $w_{\theta}=cos\theta+isin\theta$ , and $0 \le \theta \le 2\pi$.
+                It is clear that $|w\theta|=1$ and that $\forall\theta_{1},\theta_{2}$ , if $\theta_{1} \not=\theta_{2}$ ,
+                then $w_{\theta_{1}}\not=w_{\theta_{2}}$.\\
+                1.If $|z|=0$ , then $r=0$. $w$ is obviously not unique.
+                2.If $|z|\not=0$ , let $tan\theta=\frac{Im(z)}{Re(z)}$ and $z=|z|w\theta$.They are both unique.
+            \end{myprf}
+            \begin{myprf}
+                We give a proof by induction . 
+                The inequality holds obviously for $n=2$.
+                 Assume that the inequality holds for $n=m-1$ , 
+                 for $n=m$ ,
+                 \[|z_1+\cdots+z_{n-1}+z_n| \le |z_1+\cdots+z_{n-1}|+|z_n| \le |z_1|+\cdots+|z_{n-1}|+|z_n|\]
+            \end{myprf}
+            \begin{myprf}
+                Let $|x|>|y|$ , then
+                the propositon equals to\\
+                \centerline{$|x| \le |x-y|+|y|$}
+                According to Proof 12,it is clear to prove.
+            \end{myprf}
+            \begin{myprf}
+                \begin{align*}
+                    |1+z|^{2}+|1-z|^2&=(1+z)(1+\overline{z})+(1-z)(1-\overline{z})\\
+                                     &=2+z+\overline{z}+2-z-\overline{z}\\
+                                     &=4
+                \end{align*}
+            \end{myprf}
+            \begin{myprf}
+                The equality holds when 
+                $(a_1,a_2,\cdots,a_n)$ and $(b_1,b_2,\cdots,b_n)$ are proportional .
+            \end{myprf}
+            \begin{myprf}
+                Let x(0,0,\dots,0),y(d,0,\dots,0).\\
+                (a)every $z$ like ($\frac{d}{2},z_{2},\dots,z_{k}$),
+                    $z_{2}^{2}+\dots+z_{k}^{2}=r^{2}-\frac{r^{2}}{4}$.\\
+                (b)The only z is ($\frac{d}{2},0,\dots,0$).\\
+                (c)$\forall z \in \mathbf{R}^k , |z-x|+|z-y| \ge |x-y| > 2r$.
+            \end{myprf}
+            \begin{myprf}
+                \begin{align*}
+                    |x+y|^2+|x-y|^2&=\sum_{i=1}^n[(x_i+y_i)^2+(x_i-y_i)^2]\\
+                                   &=\sum_{i=1}^n(x_i^2+y_i^2)\\
+                                   &=2|x|^2+2|y|^2
+                \end{align*}
+                Geometrical interpretation : 
+                In a parallelogram , the square sum of a pair of adjacent sides 
+                                    equals to half the square sum of two diagonals.
+            \end{myprf}
+            \begin{myprf}
+                This is certainly false when k=1.\\
+                If $k=2$ , $x\cdot y=0 \Rightarrow x_1x_2+y_1y_2=0$.\\
+                Let $y_1=1$ , and $y_2=x_1x_2$.Obviously $y\not=0$.\\
+                The similar argument holds if $k >2 $.
+            \end{myprf}
+              
+
+\end{document}

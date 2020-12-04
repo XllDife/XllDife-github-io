@@ -11,12 +11,12 @@
   <meta name="description" content="大计人,大计魂,C不会写都是人下人!(指我)记一些在大计课学到\看到的一些不会的点">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的大计基-C语言部分笔记">
-<meta property="og:url" content="http://example.com/2020/11/30/%E6%88%91%E7%9A%84%E5%A4%A7%E8%AE%A1%E5%9F%BA(/index.html">
+<meta property="og:url" content="http://example.com/2020/12/04/%E6%88%91%E7%9A%84%E5%A4%A7%E8%AE%A1%E5%9F%BA(/index.html">
 <meta property="og:site_name" content="Xll&#39;s Blog">
 <meta property="og:description" content="大计人,大计魂,C不会写都是人下人!(指我)记一些在大计课学到\看到的一些不会的点">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-30T10:58:20.000Z">
-<meta property="article:modified_time" content="2020-11-30T15:59:14.999Z">
+<meta property="article:published_time" content="2020-12-04T10:58:20.000Z">
+<meta property="article:modified_time" content="2020-12-04T12:37:56.056Z">
 <meta property="article:author" content="Xll">
 <meta property="article:tag" content="语言">
 <meta name="twitter:card" content="summary">
@@ -155,8 +155,8 @@
   
 
         
-        <a href="/2020/11/30/%E6%88%91%E7%9A%84%E5%A4%A7%E8%AE%A1%E5%9F%BA(/" class="archive-article-date">
-  	<time datetime="2020-11-30T10:58:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-30</time>
+        <a href="/2020/12/04/%E6%88%91%E7%9A%84%E5%A4%A7%E8%AE%A1%E5%9F%BA(/" class="archive-article-date">
+  	<time datetime="2020-12-04T10:58:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-04</time>
 </a>
         
       </header>
@@ -164,7 +164,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="大计人-大计魂-C不会写都是人下人-指我"><a href="#大计人-大计魂-C不会写都是人下人-指我" class="headerlink" title="大计人,大计魂,C不会写都是人下人!(指我)"></a>大计人,大计魂,C不会写都是人下人!(指我)</h2><p>记一些在大计课学到\看到的一些不会的点<a id="more"></a></p>
-<h2 id="g"><a href="#g" class="headerlink" title="%g"></a>%g</h2><h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>是一个变量，它的<strong>值</strong>为另一个变量的地址。<br>使用前需要初始化，且<strong>只能</strong>初始化为0，或指向一个<strong>已声明</strong>的变量。<br>声明一个指针变量：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> *p=&amp;a;</span><br></pre></td></tr></table></figure><br>其中<code>&amp;</code>是<strong>取址符</strong>，顾名思义，用来获取该变量的地址。</p>
+<h2 id="g"><a href="#g" class="headerlink" title="%g"></a>%g</h2><p>是一个以前没见过的占位符。g是<strong>general</strong>的简写，意为它是普遍的。具体而言：</p>
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>是一个变量，它的<strong>值</strong>为另一个变量的地址。<br>使用前需要初始化，且<strong>只能</strong>初始化为0，或指向一个<strong>已声明</strong>的变量。<br>声明一个指针变量：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> *p=&amp;a;</span><br></pre></td></tr></table></figure><br>其中<code>&amp;</code>是<strong>取址符</strong>，顾名思义，用来获取该变量的地址。</p>
 <h3 id="指针使用"><a href="#指针使用" class="headerlink" title="指针使用"></a>指针使用</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> *p=&amp;a;</span><br><span class="line"><span class="built_in">printf</span>(“%d”,p);    <span class="comment">//a的地址</span></span><br><span class="line"><span class="built_in">printf</span>(“%d”,*p);   <span class="comment">//a的值</span></span><br></pre></td></tr></table></figure>
 <p>注意区分这里的<code>*p</code>与声明时的<code>*p</code>：<br>前者是代表我读这个指针所指位置的值，后者是说明我现在声明的变量是指针变量。</p>
 <h3 id="指针运算"><a href="#指针运算" class="headerlink" title="指针运算"></a>指针运算</h3><p>想必你已经发现了指针变量也是有<strong>类型</strong>的，指向什么变量类型，该指针就是什么类型。但此类型不会影响指针变量储存的内容，而会影响它的<strong>运算</strong>。</p>
@@ -174,7 +175,7 @@
 <li>比较（==,&lt;,&gt;)<br>这两种没啥好说的运算</li>
 </ol>
 <h4 id="特殊：递增-递减"><a href="#特殊：递增-递减" class="headerlink" title="特殊：递增/递减"></a>特殊：递增/递减</h4><p>即<code>p++</code><br>若p不为指针变量，则<code>p++</code>与<code>p=p+1</code>基本相同。<br>但作为指针变量，他递增的<strong>step</strong>取决于它的类型：递增<strong>该类型长度</strong>。<br>本质上，是指针的每一次递增，会指向下一个元素的存储单元。</p>
-<h2 id="数据类型带来的问题"><a href="#数据类型带来的问题" class="headerlink" title="数据类型带来的问题"></a>数据类型带来的问题</h2><p>来看一段代码:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;studio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;<span class="built_in">scanf</span>(“%d”,%a);</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(a/<span class="built_in">pow</span>(<span class="number">10</span>,i)==<span class="number">0</span>). <span class="comment">//确定a的位数</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="comment">//more codes</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>代码功能如注释所示。<br>看起来没啥问题(?),但是如果你尝试运行的话，就会发现:<br><strong>无论输出什么a,最后的i似乎都是不变的</strong></p>
+<h2 id="数据类型带来的问题"><a href="#数据类型带来的问题" class="headerlink" title="数据类型带来的问题"></a>数据类型带来的问题</h2><p>来看一段代码:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;studio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;<span class="built_in">scanf</span>(“%d”,%a);</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(a/<span class="built_in">pow</span>(<span class="number">10</span>,i)==<span class="number">0</span>). <span class="comment">//确定a的位数</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="comment">//more codes</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>代码功能如注释所示。<br>先不论该方法是否能实现所需功能,虽然语法上看起来没啥问题,但是如果你尝试运行的话，就会发现:<br><strong>无论输出什么a,最后的i似乎都是不变的</strong></p>
 
       
 
@@ -244,7 +245,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/30/%E6%88%91%E7%9A%84%E5%A4%A7%E8%AE%A1%E5%9F%BA(/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/04/%E6%88%91%E7%9A%84%E5%A4%A7%E8%AE%A1%E5%9F%BA(/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -258,18 +259,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/12/01/%E6%9E%81%E4%B9%90%E8%BF%AA%E6%96%AF%E7%A7%91-%E5%8F%AF%E8%83%BD%E6%98%AF%E6%94%BF%E6%B2%BB%E5%90%AF%E8%92%99/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          极乐迪斯科:可能是政治启蒙
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/11/28/Trpg%E7%9C%9F%E5%A5%BD%E7%8E%A9/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Trpg真好玩</div>
+    <a href="/2020/12/01/%E6%9E%81%E4%B9%90%E8%BF%AA%E6%96%AF%E7%A7%91-%E5%8F%AF%E8%83%BD%E6%98%AF%E6%94%BF%E6%B2%BB%E5%90%AF%E8%92%99/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">极乐迪斯科:可能是政治启蒙</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -315,7 +307,7 @@ if(true){
   	repo: 'xlldife.github.io',
   	owner: 'XllDife',
   	admin: ['XllDife'],
-  	id: 'Mon Nov 30 2020 18:58:20 GMT+0800',
+  	id: 'Fri Dec 04 2020 18:58:20 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
@@ -452,6 +444,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">math</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数学</a>
               </li>
             
             <div class="clearfix"></div>

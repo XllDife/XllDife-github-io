@@ -1,0 +1,347 @@
+\documentclass{report}
+
+\usepackage{amsfonts,tabularx,makecell,multirow,titlesec,color,xcolor,amsthm,amsmath}
+
+\title
+{Reading report of \\
+\emph{Principles of Mathematical Analysis}
+-Part \uppercase\expandafter{\romannumeral2}}
+
+\author{002 gxl}
+\date{\today}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{myprf}{Proof}
+\newtheorem{mytho}{Theorem}
+\newtheorem{mypro}{Propositon}
+
+\begin{document}
+    \maketitle
+    \chapter*{BASIC TOPOLOGY}
+        \section*{Notes}
+            \subsection*{2.8 Theorem}
+            Every infinite subset of a countable set $\mathbf{A}$ is countable .\\
+            The theorem shows that countable sets represent the "smallest" infinity.\\
+            Also,this theorem can be used \textbf{to show one infinite set is a countable set} , 
+            if we can find this set is equivalent to one subset of a countable set $\mathbf{A}$ .
+            
+            \subsection*{2.12 Theorem}
+            Why the author use the word "Hence" ? I can't understand it .\\
+            
+            \subsection*{*Typical countable sets}
+            $\mathbb{N} \quad  \mathbb{Q} \quad 
+            \bigcup_{\alpha \in \mathbf{A}} \mathbf{B}_\alpha $, when $\mathbf{A},\mathbf{B}_\alpha , \forall \alpha \in \mathbf{A}$ are at most countable .\\
+            set of all \textbf{algebraic numbers}.\\
+            
+            \subsection*{Cantor's diagonal process}
+            In this text , this process is used to proof \textbf{2.14 Theorem} , 
+            and it can also be used to proof a typical theorem:\\
+            \textbf{Theorem} Let $\mathbf{A}=\{x | x \in [0,1]\}$ , and $\mathbf{A}$ is uncountable.\\
+            
+            \subsection*{One more thing about 2.14 Theorem}
+            In order to proof $\mathbf{A}$ is uncountable , the author proofs that 
+            every subset of  $\mathbf{A}$ is a proper subset of $\mathbf{A}$ .
+            It should be seperated from \textbf{2.6 Remark}
+            ($\mathbf{A}$ is infinite if $\mathbf{A}$ is equivalent to one of its proper subsets)
+
+            \subsection*{Perfect}
+            \textbf{2.18 Definition (h)}\\
+            $\mathbf{E}$ is $\mathit{perfect}$ if $\mathbf{E}$ is closed and if every point of $\mathbf{E}$ is a limit point of $\mathbf{E}$.\\
+            We say $\mathbb{Q}$ is \textbf{not} perfect due to $\mathit{Dedekind \  principle}$.
+            
+            \subsection*{Dense}
+            \textbf{2.18 Definition (j)}\\
+            $\mathbf{E}$ is $\mathit{dense}$ in $\mathbf{X}$ if every point of $\mathbf{X}$ is a limit point of $\mathbf{E}$, or a point of $\mathbf{E}$ .\\
+            We say $\mathbb{Q}$ is dense in $\mathbf{R}$, that means :\\
+            $\forall x \in \mathbb{R} , \forall \epsilon > 0 , \exists y \in \mathbb{Q} , d(x,y) < \epsilon $ .
+            
+            \subsection*{2.23 Theorem}
+            Main reason: $x \in \mathbf{E} \Longleftrightarrow x \notin  \mathbf{E}^c$.\\
+            It's important that in some conditon it is hard to proof a set is closed , then we can turn to proof its complement is open.
+
+            \subsection*{Compact sets}
+            At the quiz of Unit 2 we have seen this definition . A set is compact only if every open cover of it contains a finite subcover.\\
+            A compact has many fine property:\\
+            \newline
+            \textbf{2.33 Theorem} shows compactness behaves well because it does not rely to the metric it is relative.\\
+            \textbf{2.34 2.35 Theorem} shows compactness has  deep relation to closeness.\\
+            \textbf{2.36 2.37 Theorem} links the compactness with limit.\\
+            By using \textbf{2.40 Theorem} , we can put every bounded set $E$ in $R^k$ into a compact set (a $k-cell$ $I$) and use powerful property above.\\
+            \textbf{2.41 Theorem} point out the connection between property and definition.\\
+            \newline
+            All in all , compact sets is a powerful tool for us.
+
+            \subsection*{2.42 Theorem(Weierstrass)}
+            We have known a special case of this theorem when we learn \textbf{limit of sequence} , 
+            which says a bounded sequence always has a convergent subsequence .
+
+
+            
+
+        \section*{Exersise}
+            \subsection*{1.}
+                \begin{proof}
+                    Let A be a empty set.If $\exists$ B , and A is not a subset of B.
+                    Then there must be a $\mathit{x}$ ,which $ x \in A$ but $ x \notin B$.
+                    However ,there is no element in A. Then no $x$ will be found.
+                \end{proof}
+            \subsection*{2.}
+                \begin{proof}
+                    
+                \end{proof}
+            \subsection*{3.}
+                \begin{proof}
+                    From 2. ,we know the set of all algebraic numbers is countable.
+                    But $\mathbb{R}$ is uncountable.
+                \end{proof}
+            \subsection*{4.}
+                No . If so , $\mathbb{R}$ were countable.
+            \subsection*{5.}
+                Let $A_k=\{k+\frac{1}{n+1} \ | \ n \in \mathbb{N^*}\}$ .
+                $B= \bigcup_{i =1 }^3 A_i$.
+                It obvious that $\forall x  \in B, 0 \le  x \le 4$ .
+                So $B$ is the set we seek for.
+            \subsection*{6.}
+                \begin{proof}[(1)]
+                    $\forall x_0 \notin E'$ ,then $ \exists r > 0, \forall x \in (x_0-r,x_0+r), x \notin E$.
+                    Now we will proof $x \notin E'$ , either.
+                    There must exists $ \epsilon > 0 $ , then $x_0 -r < x- \epsilon < x_0 + r $.
+                    So $x$ can not be a limit point ,that means $x \notin E'$. 
+                \end{proof}
+                \begin{proof}[(2)]
+                    Assuming $x_0 \notin E'$ but $x_0$ is a limit point of $\overline{E}$.
+                    But we have shown that if $x_0$ is not a limit point of $E$ , it will not be a limit point of $E'$ ,too.
+                    So $ \exists r > 0, \forall x \in (x_0-r,x_0+r), x \notin E \ and \ x \notin E'$ , 
+                    which means $x \notin E \cup E'$.
+                \end{proof}
+                Surely $E$ and $E'$ do not always have the same limit points.Just consider the set in Exersise-5.
+            \subsection*{7.}
+                \begin{proof}[(a)]
+                    When $n=1$ ,this theorem is obvious.\\
+                    Let $n=2$ , and what we can proof that :
+                    \[A'_1 \cup A'_2 = B'_n\]
+                    \begin{align*}
+                        x \in B'_n &\Longleftrightarrow \  \forall \delta > 0\ ,\ \exists y \in A_1\cup A_2 \ , \ y \in (x-\delta,x+\delta)\\
+                                   &\Longleftrightarrow \  \forall \delta > 0\ ,\ \exists y \in A_1 \ or \ y \in  A_2 \ , \ y \in (x-\delta,x+\delta)\\
+                                   &\Longleftrightarrow \  x \in A'_1 \cup A'_2
+                    \end{align*}
+                \end{proof}
+                \begin{proof}[(b)]
+                    Let us proof:
+                    \[\bigcup_{i=1}^\infty A'_i \subset B'\]
+                    $\forall x_0 \in \bigcup_{i=1}^\infty A'_i $ ,
+                     $\forall \epsilon > 0 \ , \ \exists x \in (x_0-\epsilon,x_0+\epsilon)$ , $x \in A_i$ for some $i$.
+                     Hence $x_0 \in (\bigcup_{i} A_i)'$ .
+                     Then $x \in B'$.
+                \end{proof}
+                This is a example to indicate this inclusion can be proper.\\
+                $A_i=\{\frac{1}{i} (1+\frac{1}{n}) \ | \ n \in \mathbb{N^*} \}$.\\
+                \newline
+                Then $A'_i=\{\frac{1}{i}\}$ . $\bigcup_{i=1}^\infty A'_i=\{\frac{1}{n} \ | \ n \in \mathbb{N^*} \}$.\\
+                \newline
+                But $B=\{0\} \cup \bigcup_{i=1}^\infty A'_i$.
+            \subsection*{8.}
+                \begin{proof}[(1)]
+                    Surely . As its definition says , \\
+                    $\forall x_0 \in E $ ,
+                     $\exists \epsilon > 0 \ , \ \forall x \in (x_0-\epsilon,x_0+\epsilon)$ , $x \in E$.\\
+                     Then $x$ is a limit point of $E$.
+                \end{proof}
+                \begin{proof}[(2)]
+                    No. Just consider a finite set . It has no limit point but is closed.
+                \end{proof}
+            \subsection*{9.}
+                \begin{proof}[(a)]
+                    Consider one element in $E^o$ called $x$.\\
+                    $\forall x_0 \in E $ ,
+                     $\exists \epsilon > 0 \ , \ \forall y \in (x-\epsilon,x+\epsilon)$ , $y \in E$.
+                     Then $\forall x' \in (x- \frac{\epsilon}{3},x+ \frac{\epsilon}{3})$ ,
+                     there exists $ \delta = \frac{\epsilon}{3}$ , then $\forall y \in (x-\delta,x+\delta)$ , $y \in E$.\\
+                     So we have found a neighbourhood of $x_0$.
+                \end{proof}
+                \begin{proof}[(b)]
+                    According to the definition?
+                \end{proof}
+                \begin{proof}[(c)]
+                    If there is $x \in G$ but $x \notin E^o$ , then $x$ is not a interior point .\\
+                    Then $G$ is not open. This is contradictory.
+                \end{proof}
+                \begin{proof}[(d)]
+                    $x \notin E^o$ equals to $x \notin E$ ($x \in E^c$) or every neighbourhood of $x$ has a $y \notin E$ ($y \in E^c$).
+                \end{proof}
+                \begin{proof}[(e)]
+                    No.Let $E=(-\infty,0)\cup(0,\infty)$ , and $\overline{E}=\mathbb{R}$.
+                    Hence $0 \notin E^o$ but $0 \in \overline{E}^o$.
+                \end{proof}
+                \begin{proof}[(f)]
+                    
+                \end{proof}
+            \subsection*{10.}
+                \begin{proof}
+                    This is a metric space.\\
+                    (1)$d(p,p)=0$ , and $d(p,q)=1>0$.\\
+                    (2)If $p \not = q$ then $d(p,q)=d(q,p)=1$.\\
+                    (3)If $p \not = q$ , $d(p,q)=1$ , $d(p,r)+d(r,q) \ge1$.
+                \end{proof}
+                open subset: every subset\\
+                closed subset: empty subset?\\
+                compact subset: empty subset?\\
+            \subsection*{11.}
+                \begin{proof}[1)]
+                    This is not a metric.\\
+                    (3)If $p \not = q$ , $d(p,q)=(p-q)^2$ , $d(p,r)+d(r,q)=(p-r)^2+(q-r)^2$.Then we should proof
+                    \begin{align*}
+                        (p-q)^2=p^2+q^2-2pq &\le p^2+q^2+2r^2-2r(p+q)=(p-r)^2+(q-r)^2\\
+                                         0  &\le (r-q)(r-p)\\
+                    \end{align*}
+                    But let $r > min\{p,q\}$ and $r< min\{p,q\}$.
+                \end{proof}
+                \begin{proof}[2)]
+                    This is a metric.\\
+                    (1)$d(p,p)=0$ , and $d(p,q)=\sqrt{|p-q|}>0$.\\
+                    (2)If $p \not = q$ then $d(p,q)=d(q,p)=\sqrt{|p-q|}$.\\
+                    (3)If $p \not = q$ , $d(p,q)=\sqrt{|p-q|}$ , $d(p,r)+d(r,q) =\sqrt{|p-r|}+\sqrt{|q-r|}$.\\
+                    Now let's proof :
+                    \begin{align*}
+                        \sqrt{|p-q|} &\le \sqrt{|p-r|}+\sqrt{|q-r|}\\
+                        |p-q|  &\le |p-r|+|q-r|+\sqrt{|p-r||q-r|}\\
+                    \end{align*}
+                    Since $|p-q|  \le |p-r|+|q-r|$ and $\sqrt{|p-r||q-r|} \ge 0$ , this inequaiton is true.
+                \end{proof}
+                \begin{proof}[3)]
+                    This is a metric.\\
+                    (1)$d(p,p)=0$ , and $d(p,q)=|p^2-q^2|>0$.\\
+                    (2)If $p \not = q$ then $d(p,q)=d(q,p)=|p^2-q^2|$.\\
+                    (3)If $p \not = q$ , $d(p,q)=|p^2-q^2|$ , $d(p,r)+d(r,q) =|p^2-r^2|+|r^2-q^2|$.\\
+                    Since $|p^2-q^2|  \le |p^2-r^2|+|r^2-q^2|$ , $d(p,q) \le d(p,r)+d(r,q)$ is true.
+                \end{proof}
+                \begin{proof}[4)]
+                    This is not a metric.\\
+                    (2)$d(p,q)=|p-2q|$ but $d(q,p)=|q-2p|$.Let $q=0$ , $p=1$ , and $d(p,q) \not = d(q,p)$ .
+                \end{proof}
+                \begin{proof}[5)]
+                    This is a metric.\\
+                    (1)$d(p,p)=0$ , and $d(p,q)=\frac{|p-q|}{1+|p-q|}>0$.\\
+                    (2)If $p \not = q$ then $d(p,q)=d(q,p)=\frac{|p-q|}{1+|p-q|}$.\\
+                    (3)If $p \not = q$ , $d(p,q)=\frac{|p-q|}{1+|p-q|}$ , $d(p,r)+d(r,q) =\frac{|p-r|}{1+|p-r|}+\frac{|r-q|}{1+|r-q|}$.\\
+                    \begin{align*}
+                        \frac{|p-q|}{1+|p-q|} &\le \frac{|p-r|}{1+|p-r|}+\frac{|r-q|}{1+|r-q|}\\
+                        \frac{1}{1+|p-r|}+\frac{1}{1+|r-q|} &\le 1+\frac{1}{1+|p-q|} \le 1+\frac{1}{1+|p-r|+|r-q|}\\
+                        \frac{2+|p-r|+|r-q|}{1+|p-r|+|r-q|+|p-r||r-q|} &\le \frac{2+|p-r|+|r-q|}{1+|p-r|+|r-q|}
+                    \end{align*}
+                \end{proof}
+            \subsection*{12.}
+                (What's \textit{directly from the definiton} ?)
+                \begin{proof}
+                    Let $A= [0,1]$ and $A$ is compact . It is clear that $K \subset A$ .
+                    And $K$ is closed because its only limit point $0 \in K$.
+                    So $K$ is compact.
+                \end{proof}
+            \subsection*{13.}
+                \begin{proof}
+                    Let $K_i=\{i\}\cup\{i+\frac{1}{n} \ | \ n \in \mathbb{N^*}\}$ . It has only limit point $i$ .
+                    Now let $K=\bigcup_{i \in \mathbb{Z}} K_i$ , and proof $K$ is compact.
+                    Hence $K$ is the compact set we are searching for.
+                \end{proof}
+            \subsection*{14.}
+                \begin{proof}
+                    Of course . Just think a subset of $\mathbb{R}^1$ , $(0,1)$ .
+                    It has a open cover $\mathcal{A} $ , $\mathcal{A}=\bigcup_{i=1}^\infty (0,1-\frac{1}{i})$ .\\
+                    It is clear that $\mathcal{A}$ does not have a finity subset.
+                \end{proof}
+            \subsection*{15.}
+                \begin{proof}
+
+                \end{proof}
+            \subsection*{16.}
+                \begin{proof}
+                    
+                \end{proof}
+            \subsection*{17.}
+                \begin{proof}[Countable]
+                    No.If we consider 4 as 0 and 7 and 1 in binary system , thus we connect each $x \in E$ with $y \in [0,1]$ .\\
+                    Hence $[0,1]$ is uncountable in $R^1$ , $E$ is uncountable.
+                \end{proof}
+                \begin{proof}[Dense]
+                    No . Just think about 0 or 1.
+                \end{proof}
+                \begin{proof}[compact]
+                    
+                \end{proof}
+                \begin{proof}[perfect]
+                    
+                \end{proof}
+            \subsection*{18.}
+                \begin{proof}
+                    Yes . Just consider $\mathbb{R}/\mathbb{Q}$ .
+                \end{proof}
+            \subsection*{19.}
+                \begin{proof}[(a)]
+                    Hence $A$ and $B$ are closed , then $\overline{A}=A$ and $\overline{B}=B$ .
+                    If they are not separated , there must be a $x \in \overline{A}\cup B$ or $x \in \overline{B}\cup A$.
+                    In other words , $x\in A\cup B$ .\\
+                    Then $A$ and $B$ is adjoint , in contradiction to our suppose.
+                \end{proof}
+                \begin{proof}[(b)]
+                    Assuming there are some $x \in A' \cup B$ , then for every neighbourhood of $x$ , there exists a $y \in A$ and $ \in B$ , 
+                    in contradiction to our suppose.
+                \end{proof}
+                \begin{proof}[(c)]
+                    Using (b).
+                \end{proof}
+                \begin{proof}[(d)]
+                    
+                \end{proof}
+            \subsection*{20.}
+                \begin{proof}[closure]
+
+                \end{proof}
+                \begin{proof}[interior]
+                    No . Let $A=\{(a_0,b)\ | b \in \mathbb{R}\}$ and $B=\{(a_0,b)\ | a \in \mathbb{R}\}$ .
+                    $A$ and $B$ are subsets of $\mathbb{R}^2$ and it is clear $A\cup B$ is connected.
+                    Then $(A\cup B)^o$ is empty , thus it is not connected .
+                \end{proof}
+            \subsection*{21.}
+                \begin{proof}
+
+                \end{proof}
+            \subsection*{22.}
+                \begin{proof}
+                    Consider the set $A$ whose points have only rational coordinates . $\mathbb{Q}$ is countable and dense , hence $A$ is countable and dense .\\
+                    $A \subset R^k$ so $R^k$ is separable .
+                \end{proof}
+            \subsection*{23.}
+                \begin{proof}
+                    From \textbf{22}. we have known every separable metric space has a countable dense subset .
+                    Take all neighbourhoods with rational radius and center in this countable dense subset .\\ 
+                    We called this collection of open subsets {$V_{\alpha,r}$} . $V_{\alpha,r}$ is the neighbourhood whose radius is $r$ and center is $\alpha$ .\\
+                    For every open subset $E$, due to its openness and the dense of $\mathbb{Q}$ ,
+                    this subset if the union of subcollection of {$V_{\alpha,r}$} , which $\alpha \in E$ and $(\alpha -r , \alpha +r) \subset X$ .               
+                \end{proof}
+            \subsection*{24.}
+                \begin{proof}
+
+                \end{proof}
+            \subsection*{25.}
+                \begin{proof}
+                    
+                \end{proof}
+            \subsection*{26.}
+                \begin{proof}
+
+                \end{proof}
+            \subsection*{27.}
+                \begin{proof}
+
+                \end{proof}
+            \subsection*{28.}
+                \begin{proof}
+
+                \end{proof}
+            \subsection*{29.}
+                \begin{proof}
+
+                \end{proof}
+            \subsection*{30.}
+                I'm so vegetable.
+\end{document}

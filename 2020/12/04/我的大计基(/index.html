@@ -8,18 +8,21 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>我的大计基-C语言部分笔记 | Xll&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="大计人,大计魂,C不会写都是人下人!(指我)记一些在大计课学到\看到的一些不会的点">
+  <meta name="description" content="大计人,大计魂,C不会写都是人下人!(指我)记一些在大计课学到&#x2F;看到的一些不会的点">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的大计基-C语言部分笔记">
 <meta property="og:url" content="http://example.com/2020/12/04/%E6%88%91%E7%9A%84%E5%A4%A7%E8%AE%A1%E5%9F%BA(/index.html">
 <meta property="og:site_name" content="Xll&#39;s Blog">
-<meta property="og:description" content="大计人,大计魂,C不会写都是人下人!(指我)记一些在大计课学到\看到的一些不会的点">
+<meta property="og:description" content="大计人,大计魂,C不会写都是人下人!(指我)记一些在大计课学到&#x2F;看到的一些不会的点">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2020/12/04/%E6%88%91%E7%9A%84%E5%A4%A7%E8%AE%A1%E5%9F%BA(/t1.png">
+<meta property="og:image" content="http://example.com/2020/12/04/%E6%88%91%E7%9A%84%E5%A4%A7%E8%AE%A1%E5%9F%BA(/insert.jpg">
 <meta property="article:published_time" content="2020-12-04T10:58:20.000Z">
-<meta property="article:modified_time" content="2020-12-04T12:37:56.056Z">
+<meta property="article:modified_time" content="2020-12-10T01:59:46.802Z">
 <meta property="article:author" content="Xll">
 <meta property="article:tag" content="语言">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2020/12/04/%E6%88%91%E7%9A%84%E5%A4%A7%E8%AE%A1%E5%9F%BA(/t1.png">
   
     <link rel="alternative" href="/atom.xml" title="Xll&#39;s Blog" type="application/atom+xml">
   
@@ -163,11 +166,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="大计人-大计魂-C不会写都是人下人-指我"><a href="#大计人-大计魂-C不会写都是人下人-指我" class="headerlink" title="大计人,大计魂,C不会写都是人下人!(指我)"></a>大计人,大计魂,C不会写都是人下人!(指我)</h2><p>记一些在大计课学到\看到的一些不会的点<a id="more"></a></p>
-<h2 id="g"><a href="#g" class="headerlink" title="%g"></a>%g</h2><p>是一个以前没见过的占位符。g是<strong>general</strong>的简写，意为它是普遍的。具体而言：</p>
+        <h2 id="大计人-大计魂-C不会写都是人下人-指我"><a href="#大计人-大计魂-C不会写都是人下人-指我" class="headerlink" title="大计人,大计魂,C不会写都是人下人!(指我)"></a>大计人,大计魂,C不会写都是人下人!(指我)</h2><p>记一些在大计课学到/看到的一些不会的点<a id="more"></a></p>
+<h2 id="g"><a href="#g" class="headerlink" title="%g"></a>%g</h2><p>是一个以前没见过的占位符。g是<strong>general</strong>的简写，意为它是普遍的。具体而言：%g用来输出<strong>实数</strong>，它根据数值的大小，自动选f格式或e格式（选择输出时占宽度较小的一种），且<strong>不输出无意义的0</strong>。即%g是根据结果自动选择科学记数法还是一般的小数记数法:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%g\n&quot;</span>, <span class="number">0.00001234</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%g\n&quot;</span>, <span class="number">0.0001234</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%.2g\n&quot;</span>, <span class="number">123.45</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%.2g\n&quot;</span>, <span class="number">23.45</span>);</span><br><span class="line"><span class="comment">//输出</span></span><br><span class="line"><span class="number">1.234e-05</span></span><br><span class="line"><span class="number">0.0001234</span></span><br><span class="line"><span class="number">1.2e+02</span></span><br><span class="line"><span class="number">23</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 <h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>是一个变量，它的<strong>值</strong>为另一个变量的地址。<br>使用前需要初始化，且<strong>只能</strong>初始化为0，或指向一个<strong>已声明</strong>的变量。<br>声明一个指针变量：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> *p=&amp;a;</span><br></pre></td></tr></table></figure><br>其中<code>&amp;</code>是<strong>取址符</strong>，顾名思义，用来获取该变量的地址。</p>
 <h3 id="指针使用"><a href="#指针使用" class="headerlink" title="指针使用"></a>指针使用</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> *p=&amp;a;</span><br><span class="line"><span class="built_in">printf</span>(“%d”,p);    <span class="comment">//a的地址</span></span><br><span class="line"><span class="built_in">printf</span>(“%d”,*p);   <span class="comment">//a的值</span></span><br></pre></td></tr></table></figure>
 <p>注意区分这里的<code>*p</code>与声明时的<code>*p</code>：<br>前者是代表我读这个指针所指位置的值，后者是说明我现在声明的变量是指针变量。</p>
+<p>特别的，字符串可以用<strong>指向字符串头的指针</strong>声明/唯一表示。(<code>\0</code>的存在)</p>
 <h3 id="指针运算"><a href="#指针运算" class="headerlink" title="指针运算"></a>指针运算</h3><p>想必你已经发现了指针变量也是有<strong>类型</strong>的，指向什么变量类型，该指针就是什么类型。但此类型不会影响指针变量储存的内容，而会影响它的<strong>运算</strong>。</p>
 <h4 id="普通运算"><a href="#普通运算" class="headerlink" title="普通运算"></a>普通运算</h4><p>指针可进行</p>
 <ol>
@@ -175,7 +179,18 @@
 <li>比较（==,&lt;,&gt;)<br>这两种没啥好说的运算</li>
 </ol>
 <h4 id="特殊：递增-递减"><a href="#特殊：递增-递减" class="headerlink" title="特殊：递增/递减"></a>特殊：递增/递减</h4><p>即<code>p++</code><br>若p不为指针变量，则<code>p++</code>与<code>p=p+1</code>基本相同。<br>但作为指针变量，他递增的<strong>step</strong>取决于它的类型：递增<strong>该类型长度</strong>。<br>本质上，是指针的每一次递增，会指向下一个元素的存储单元。</p>
+<h3 id="指针数组"><a href="#指针数组" class="headerlink" title="指针数组"></a>指针数组</h3><p>同其他类型一样，指针变量也可使用数组。<strong>但我不会用</strong></p>
 <h2 id="数据类型带来的问题"><a href="#数据类型带来的问题" class="headerlink" title="数据类型带来的问题"></a>数据类型带来的问题</h2><p>来看一段代码:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;studio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;<span class="built_in">scanf</span>(“%d”,%a);</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(a/<span class="built_in">pow</span>(<span class="number">10</span>,i)==<span class="number">0</span>). <span class="comment">//确定a的位数</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="comment">//more codes</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>代码功能如注释所示。<br>先不论该方法是否能实现所需功能,虽然语法上看起来没啥问题,但是如果你尝试运行的话，就会发现:<br><strong>无论输出什么a,最后的i似乎都是不变的</strong></p>
+<h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><p>没了<code>sort</code>跟<code>swap</code>我好难受。<br>大计课只要求掌握两种$O(n^2)$排序:冒泡排序，插入排序。</p>
+<h3 id="排序技巧"><a href="#排序技巧" class="headerlink" title="排序技巧"></a>排序技巧</h3><p>一组数据排序中,下面两种方法经常用。</p>
+<h4 id="结构体排序"><a href="#结构体排序" class="headerlink" title="结构体排序"></a>结构体排序</h4><p>用于将一组数据绑定，使排序时的交换不仅限于被比较的那一类数据。<br>典型例子就是学生成绩排序：<img src="t1.png" alt=""><br>可将学生构造成一个结构体，<br>没泛型的swap怎搞……</p>
+<h4 id="间接排序"><a href="#间接排序" class="headerlink" title="间接排序"></a>间接排序</h4><p>排序时不改变数据位置，而是再开一个<code>dir</code>数组，记录大小顺序下的第<code>i</code>个元素，数据是<code>a[i] b[i] c[i]</code>等。（我个人喜欢用，因为不用写结构体，也不用写<code>student[i].name</code>这样的长变量名。<br>还是看上面的学生排序例子，直接贴我的代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, num[i]);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, name[i]);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;score[i][<span class="number">1</span>], &amp;score[i][<span class="number">2</span>], &amp;score[i][<span class="number">3</span>]);</span><br><span class="line">        dir[i] = i;<span class="comment">//初始化</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">            <span class="keyword">if</span> (cmp(dir[i], dir[j]) &gt; <span class="number">0</span>) &#123;<span class="comment">//重要!不是ij</span></span><br><span class="line">                swap(&amp;dir[i], &amp;dir[j]);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>小鲤鱼吐泡泡。</p>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>从第一个元素起，向后依次比较每一对相邻元素，若逆序则交换，使大的（不妨认为升序排序）数前往数组后方。</p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;n<span class="number">-1</span>; i++) <span class="comment">//外循环为排序趟数，n个数进行n-1趟</span></span><br><span class="line">        <span class="keyword">for</span> (j=<span class="number">1</span>; j&lt;=n-i; j++) &#123; <span class="comment">//内循环为每趟比较的次数，第i趟比较n-i次</span></span><br><span class="line">            <span class="keyword">if</span> (cmp(j,j+<span class="number">1</span>)) &#123;<span class="comment">//如果使用dir间接排序,应写成cmp(dir[j],dir[j+1])</span></span><br><span class="line">                swap(&amp;a[i],&amp;a[j]);<span class="comment">//同上,且此时swap认为是自己写的用指针实现的函数</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>大概是我玩扑克牌的样子。(图源 算法导论)<img src="insert.jpg" alt=""></p>
+<h4 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h4><p>通过交换使最小的被放在最前，再在2~n位置重复。</p>
+<h4 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="comment">//寻找第i小</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">        <span class="keyword">if</span>(cmp(i,j))<span class="comment">//如果使用dir间接排序,应写成cmp(dir[i],dir[j])</span></span><br><span class="line">            swap(&amp;a[i],&amp;a[j]);<span class="comment">//同上,且此时swap认为是自己写的用指针实现的函数</span></span><br></pre></td></tr></table></figure>
 
       
 
@@ -595,5 +610,21 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 </body>
 </html>

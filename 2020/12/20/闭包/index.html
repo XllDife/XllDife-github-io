@@ -6,20 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>基础图论算法 | Xll&#39;s Blog</title>
+  <title>闭包 | Xll&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简单的图论算法,涉及存图 , 最短路 ,">
-<meta property="og:type" content="article">
-<meta property="og:title" content="基础图论算法">
-<meta property="og:url" content="http://example.com/2020/12/19/%E5%9F%BA%E7%A1%80%E5%9B%BE%E8%AE%BA/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="闭包">
+<meta property="og:url" content="http://example.com/2020/12/20/%E9%97%AD%E5%8C%85/index.html">
 <meta property="og:site_name" content="Xll&#39;s Blog">
-<meta property="og:description" content="简单的图论算法,涉及存图 , 最短路 ,">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-12-19T12:55:45.000Z">
-<meta property="article:modified_time" content="2020-12-20T07:50:12.937Z">
+<meta property="article:published_time" content="2020-12-20T07:51:14.000Z">
+<meta property="article:modified_time" content="2020-12-20T07:51:14.970Z">
 <meta property="article:author" content="Xll">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="图论">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Xll&#39;s Blog" type="application/atom+xml">
@@ -162,45 +158,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-基础图论" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-闭包" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      基础图论算法
+      闭包
     </h1>
   
 
         
-        <a href="/2020/12/19/%E5%9F%BA%E7%A1%80%E5%9B%BE%E8%AE%BA/" class="archive-article-date">
-  	<time datetime="2020-12-19T12:55:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-19</time>
+        <a href="/2020/12/20/%E9%97%AD%E5%8C%85/" class="archive-article-date">
+  	<time datetime="2020-12-20T07:51:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>简单的图论算法,涉及存图 , 最短路 ,<a id="more"></a></p>
-<h2 id="存图"><a href="#存图" class="headerlink" title="存图"></a>存图</h2><p>图论的第一步</p>
-<h3 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h3><p>朴素的存图方式 , 用于 <a href="#Floyd-Warshall">Floyd</a> , 稠密图 , 拓扑排序 .</p>
-<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><p>使用二维数组$E[i][j]$ , $E[i][j]=0$表示无法$i \rightarrow j$ , 再用$E[i][j]$记录边权/边数等数据.</p>
-<h3 id="前向星"><a href="#前向星" class="headerlink" title="前向星"></a>前向星</h3><p>使用最广泛的存稀疏图方式</p>
-<h3 id="向量数组-Vector"><a href="#向量数组-Vector" class="headerlink" title="向量数组 (Vector)"></a>向量数组 (Vector)</h3><p>使用Vector代替前向星的链表.</p>
-<h4 id="优-劣势"><a href="#优-劣势" class="headerlink" title="优/劣势"></a>优/劣势</h4><p>既能在控制空间复杂度的前提下快速遍历边 , 也有顺序表的某些优势 (易于<strong>排序</strong>) . 但使用STL略微增加了时间复杂度 .</p>
-<h2 id="最短路算法"><a href="#最短路算法" class="headerlink" title="最短路算法"></a>最短路算法</h2><p>图论的第一类算法</p>
-<h3 id="朴素的迪杰斯特拉-Dijkstra"><a href="#朴素的迪杰斯特拉-Dijkstra" class="headerlink" title="朴素的迪杰斯特拉(Dijkstra)"></a>朴素的迪杰斯特拉(Dijkstra)</h3><p>使用</p>
-<h3 id="迪杰斯特拉-Dijkstra-的堆优化"><a href="#迪杰斯特拉-Dijkstra-的堆优化" class="headerlink" title="迪杰斯特拉(Dijkstra)的堆优化"></a>迪杰斯特拉(Dijkstra)的堆优化</h3><p>关键操作为<strong>有序的</strong>松弛 , 使用<strong>优先队列(priority_queue)</strong> 即<strong>小根堆(pile)</strong> 进行优化 . 最稳定的 $nlogn$ 算法 , 但无法处理含负权边的图 .</p>
-<h4 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h4><p>边权非负 (原因见下 <a href="#正确性证明——为什么每个节点只会拓展一次">正确性证明</a>)</p>
-<h4 id="思路-时间复杂度分析"><a href="#思路-时间复杂度分析" class="headerlink" title="思路/时间复杂度分析"></a>思路/时间复杂度分析</h4><p>从源点开始拓展节点 , 使用 $vis[i]$ 记录节点 $i$ 是否<strong>已经拓展</strong> , 以 $d[i]$ 为拓展顺序的标准 , 先拓展 $d[i]$ 小的 (使用小根堆完成) . 这样每个节点只需拓展一次 , 设节点数为 $n$ , 边数为 $m$ . 则时间复杂度为 $O(nlogm + mlogm)$ , 其中 $nlogm$ 是每次从小根堆中取拓展节点的时间 , $mlogm$ 是最坏需要向小根堆中加入 $m$ 次节点 .</p>
-<h4 id="正确性证明——为什么每个节点只会拓展一次"><a href="#正确性证明——为什么每个节点只会拓展一次" class="headerlink" title="正确性证明——为什么每个节点只会拓展一次"></a>正确性证明——为什么每个节点只会拓展一次</h4><p>当节点 $i$ 拓展完毕后 , $vis[i]=1$ , 此时记 $d[i]=d$ , 之后再拿出来拓展的节点 $j$ 一定有 $d[j] \ge d$ , 又因为<strong>边权非负</strong> , 则 $d[j] + e[i].val \ge d $ , 则 $i$ 一定不会被之后的点更新 .</p>
-<h4 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h4><p>使用优先队列优化<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> next,to,w;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x,val;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Node &amp;n)<span class="keyword">const</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> val&gt;n.val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">/////////</span></span><br><span class="line"><span class="keyword">int</span> d[maxn];</span><br><span class="line"><span class="keyword">bool</span> vis[maxn];</span><br><span class="line"><span class="built_in">priority_queue</span>&lt;Node&gt; pq;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dij</span><span class="params">(<span class="keyword">int</span> s)</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(d,<span class="number">0x3f</span>,<span class="keyword">sizeof</span>(d));</span><br><span class="line">    <span class="built_in">memset</span>(vis,<span class="literal">false</span>,<span class="keyword">sizeof</span>(vis));</span><br><span class="line">    d[s]=<span class="number">0</span>;pq.push((Node)&#123;s,<span class="number">0</span>&#125;);</span><br><span class="line">    <span class="keyword">while</span>(!pq.empty())&#123;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        Node N=pq.top();pq.pop();</span><br><span class="line">        <span class="keyword">int</span> x=N.x;</span><br><span class="line">        <span class="keyword">if</span>(vis[x])<span class="keyword">continue</span>;</span><br><span class="line">        vis[x]=<span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(i=head[x];i;i=e[i].next)&#123;</span><br><span class="line">            <span class="keyword">int</span> to=e[i].to;</span><br><span class="line">            <span class="keyword">if</span>(!vis[to] &amp;&amp; d[to]&gt;d[x]+e[i].w)&#123;</span><br><span class="line">                d[to]=d[x]+e[i].w;</span><br><span class="line">                pq.push((Node)&#123;to,d[to]&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//////////////</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="Bellman-Ford"><a href="#Bellman-Ford" class="headerlink" title="Bellman-Ford"></a>Bellman-Ford</h3><h3 id="SPFA-Shortest-Path-Faster-Algorithm"><a href="#SPFA-Shortest-Path-Faster-Algorithm" class="headerlink" title="SPFA (Shortest Path Faster Algorithm)"></a>SPFA (Shortest Path Faster Algorithm)</h3><p>正如其名 , 快速的最短路算法 , 在随机数据上有很好的表现 , 面对菊花图等会退化 . 是<a href="#Bellman-Ford">上文所说的Bellman</a>的优化算法 . 码量相比 <a href="#迪杰斯特拉Dijkstra的堆优化">Dij</a> 要少 <del>也是算法竞赛中SPFA的唯二优势</del></p>
-<h4 id="核心代码-1"><a href="#核心代码-1" class="headerlink" title="核心代码"></a>核心代码</h4><h3 id="Floyd-Warshall"><a href="#Floyd-Warshall" class="headerlink" title="Floyd-Warshall"></a>Floyd-Warshall</h3><p>运用<strong>dp (刷表)</strong> 思想的算法 , 用于求任两点之间的最短路 , 还可用于 <strong>传递闭包(closure)</strong></p>
-<h4 id="核心代码-2"><a href="#核心代码-2" class="headerlink" title="核心代码"></a>核心代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=n;k++)<span class="comment">//中转点在最外层</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">    d[i][j]=min(d[i][j],d[i][k]+d[k][j]);</span><br></pre></td></tr></table></figure>
-<h4 id="正确性证明"><a href="#正确性证明" class="headerlink" title="正确性证明"></a>正确性证明</h4><p>简洁的后果是他的证明很难理解 .</p>
-
+        
       
 
       
@@ -208,33 +186,7 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">图论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/计科//" class="article-tag-list-link color3">计科</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -284,7 +236,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/19/%E5%9F%BA%E7%A1%80%E5%9B%BE%E8%AE%BA/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/20/%E9%97%AD%E5%8C%85/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -298,18 +250,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/12/20/%E9%97%AD%E5%8C%85/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2077/11/12/Welcome/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          闭包
+          欢迎来到正在建设中的Blog
         
       </div>
     </a>
   
   
-    <a href="/2020/12/17/%E6%B8%B8%E6%88%8F%E7%9F%AD%E8%AF%84/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">游戏短评</div>
+    <a href="/2020/12/19/%E5%9F%BA%E7%A1%80%E5%9B%BE%E8%AE%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基础图论算法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -328,19 +280,6 @@
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%9B%BE"><span class="toc-number">1.</span> <span class="toc-text">存图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5"><span class="toc-number">1.1.</span> <span class="toc-text">邻接矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E5%90%91%E6%98%9F"><span class="toc-number">1.2.</span> <span class="toc-text">前向星</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E6%95%B0%E7%BB%84-Vector"><span class="toc-number">1.3.</span> <span class="toc-text">向量数组 (Vector)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98-%E5%8A%A3%E5%8A%BF"><span class="toc-number">1.3.1.</span> <span class="toc-text">优&#x2F;劣势</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%9F%AD%E8%B7%AF%E7%AE%97%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">最短路算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%B4%E7%B4%A0%E7%9A%84%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89-Dijkstra"><span class="toc-number">2.1.</span> <span class="toc-text">朴素的迪杰斯特拉(Dijkstra)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89-Dijkstra-%E7%9A%84%E5%A0%86%E4%BC%98%E5%8C%96"><span class="toc-number">2.2.</span> <span class="toc-text">迪杰斯特拉(Dijkstra)的堆优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%82%E7%94%A8%E8%8C%83%E5%9B%B4"><span class="toc-number">2.2.1.</span> <span class="toc-text">适用范围</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-number">2.2.2.</span> <span class="toc-text">思路&#x2F;时间复杂度分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E7%A1%AE%E6%80%A7%E8%AF%81%E6%98%8E%E2%80%94%E2%80%94%E4%B8%BA%E4%BB%80%E4%B9%88%E6%AF%8F%E4%B8%AA%E8%8A%82%E7%82%B9%E5%8F%AA%E4%BC%9A%E6%8B%93%E5%B1%95%E4%B8%80%E6%AC%A1"><span class="toc-number">2.2.3.</span> <span class="toc-text">正确性证明——为什么每个节点只会拓展一次</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81"><span class="toc-number">2.2.4.</span> <span class="toc-text">核心代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bellman-Ford"><span class="toc-number">2.3.</span> <span class="toc-text">Bellman-Ford</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SPFA-Shortest-Path-Faster-Algorithm"><span class="toc-number">2.4.</span> <span class="toc-text">SPFA (Shortest Path Faster Algorithm)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81-1"><span class="toc-number">2.4.1.</span> <span class="toc-text">核心代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Floyd-Warshall"><span class="toc-number">2.5.</span> <span class="toc-text">Floyd-Warshall</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81-2"><span class="toc-number">2.5.1.</span> <span class="toc-text">核心代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E7%A1%AE%E6%80%A7%E8%AF%81%E6%98%8E"><span class="toc-number">2.5.2.</span> <span class="toc-text">正确性证明</span></a></li></ol></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
@@ -368,7 +307,7 @@ if(true){
   	repo: 'xlldife.github.io',
   	owner: 'XllDife',
   	admin: ['XllDife'],
-  	id: 'Sat Dec 19 2020 20:55:45 GMT+0800',
+  	id: 'Sun Dec 20 2020 15:51:14 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 

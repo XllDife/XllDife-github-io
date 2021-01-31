@@ -392,6 +392,27 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
+
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.1/viz.js'></script>
+	<script>
+	  String.prototype.replaceAll = function(search, replacement) {
+		var target = this;
+		return target.split(search).join(replacement);
+	  };
+  
+	  let vizObjects = document.querySelectorAll('.graphviz')
+  
+	  for (let item of vizObjects) {
+		let svg = undefined
+		try {
+		  svg = Viz(item.textContent.replaceAll('–', '--'), 'svg')
+		} catch(e) {
+		  svg = `<pre class="error">${e}</pre>`
+		}
+		item.outerHTML = svg
+	  }
+	</script>
+  
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -477,6 +498,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">graphviz</a>
               </li>
             
             <div class="clearfix"></div>
